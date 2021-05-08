@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<!-- Company Name -->
+		<title>3rd Market Place</title>
+		
+		<!-- Company Icon -->
+		<link rel="icon" href="images/logo.png">
+		
+		<!-- Google Font  -->
+
+		<!-- Tailwind css  -->
+		<link rel="stylesheet" href="css/tailwind.min.css">
+		<style>
+			ul li{
+				position: relative;
+			}
+			ul li:after{
+				content: "";
+				height: 1px;
+				width: 0px;
+				left: 0;
+				bottom: -2px;
+				position: absolute;
+				background: rgba(79,70,229);
+				transition-duration: .4s;
+			}
+			ul li:hover::after,ul li:focus::after,ul li a:active::after,.active::after{
+				width: 100% !important;
+			}
+			@media(min-width:1550px){
+				body{
+					width: 1400px;
+					margin: auto;
+				}
+			}
+		</style>
+	</head>
+	<body >
+		<!-- ==Header Section == -->
+		<header class="right-0 top-0 left-0 z-50">
+			<div x-data="{humberger:false}">
+				<!------- mobile menu-------->
+				<nav class="relative z-50" x-show="humberger"
+					@click.away="humberger = false"
+					x-transition:enter="transition ease-out duration-300 -ml-64"
+					x-transition:enter-start=""
+					x-transition:enter-end=" transform translate-x-64"
+					x-transition:leave="transition ease-out duration-300"
+					x-transition:leave-start=""
+					x-transition:leave-end="transform -translate-x-64"
+				>
+					<div class="fixed top-0 left-0 bg-white shadow-2xl w-72 h-screen uppercase">
+						<div class=" absolute top-4 left-60">
+							<span @click="humberger=false"><i class="far fa-times-circle fa-2x text-red-400 hover:text-red-500 "></i></span>
+						</div>
+						<div class="relative border-b py-5 pl-7 mb-4">
+							<!----------Company logo------------->
+							<a href="index.html">
+								<img class=" w-40" src="images/logo.png" alt="Company logo">
+							</a>
+							<span @click="humberger= false" class=" cursor-pointer absolute right-2 top-7 border-2 border-yellow-500 rounded text-gray-500 p-1 select-none hover:text-red-400 text-xs"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+							</svg></span>
+						</div>
+						<div class="space-x-6 text-xs font-semibold w-full" x-data=" {active :'active1'}">
+							<ul class="w-full tracking-wider scroll">
+								<li @click=" active='active1'" :class="{'active': active==='active1'}" class="duration-300 hover:shadow border-b py-4 px-10">
+									<a href="index.html">Marketplace</a>
+								</li>
+								<li @click=" active='active2'" :class="{'active': active==='active2'}" class="duration-300 hover:tracking-widest hover:shadow border-b py-4 px-10">
+									<a href="#Portfolio"
+									>About Us</a>
+								</li>
+								<li @click=" active='active3'" :class="{'active': active==='active3'}" class="duration-300 hover:tracking-widest hover:shadow border-b py-4 px-10">
+									<a href="#About-us"
+									>Support</a>
+								</li>
+								<li @click=" active='active4'" :class="{'active': active==='active4'}" class="duration-300 hover:tracking-widest hover:shadow border-b py-4 px-10">
+									<a href="#blog"
+									>Sign In</a>
+								</li>
+								<li @click=" active='active5'" :class="{'active': active==='active5'}" class="duration-300 hover:tracking-widest hover:shadow border-b py-4 px-10">
+									<a href="#">Sign Up</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+				<!------- nav bar-------->
+				<nav class="py-5 flex justify-between sm:px-0 px-5 items-center text-center text-white xl:px-32 md:px-16 sm:px-8 px-4">
+					<!------- Compnany icon-------->
+					<div>
+						<!----------Company logo------------->
+						<a href="index.html">
+							<img class=" w-40" src="images/logo.png" alt="Company logo">
+						</a>
+					</div>
+					<!------- Main menu-------->
+					<div class="lg:flex space-x-6 text-sm font-medium hidden">
+						<ul x-data=" {active :'active1'}" class="space-x-6 md:flex hidden tracking-wider scroll relative">
+							<!--------------------->
+							<li  @click=" active='active1'" :class="{'active': active==='active1'}" class="text-blue-900">
+								<a href="#">Marketplace</a>
+							</li>
+							<!--------------------->
+							<li  @click=" active='active2'" :class="{'active': active==='active2'}" class="text-blue-900">
+								<a  href="#">About Us</a>
+							</li>
+							<!--------------------->
+							<li  @click=" active='active3'" :class="{'active': active==='active3'}" class="text-blue-900">
+								<a  href="#">Support</a>
+							</li>
+							<!--------------------->
+							<li  @click=" active='active4'" :class="{'active': active==='active4'}" class="text-blue-900">
+								<a  href="#">Sign In</a>
+							</li>
+							<!--------------------->
+							<div>
+								<a class="px-8 py-3 bg-yellow-500 text-white rounded-full shadow-2xl whitespace-nowrap font-bold" href="#">Sign Up</a>
+							</div>
+						</ul>
+					</div>
+					<!------- Mobile menu button------->
+					<div class="flex lg:hidden">
+						<button class=" bg-yellow-500 text-white rounded-full shadow-2xl whitespace-nowrap font-bold h-12 w-12 flex items-center justify-center drop-shadow-2xl focus:outline-none" @click="humberger=true">
+							<img class="h-4 w-4" src="images/menu.png" alt="">
+						</button>
+					</div>
+				</nav>
+			</div>
+		</header>
+		<main class="overflow-hidden">
+			<!-- == Slider Section == -->
+			<section>
+				<div class="xl:h-screen pt-10 xl:px-32 md:px-16 sm:px-8 px-4">
+					<div class="relative md:grid md:grid-cols-2 bg-cover bg-no-repeat rounded-3xl h-3/4 " style="background-image:url(images/bg-01.png)">
+						<!-------001--------->
+						<div class=" flex self-center md:justify-end justify-center lg:py-10 py-5">
+							<div class="md:text-left text-center xl:w-3/4 w-4/5 py-10">
+								<h3 class="lg:text-5xl text-4xl font-bold pb-3 text-white xl:w-3/4">The Market Is Now Open!</h3>
+								<h5 class="text-white opacity-80 block text-sm tracking-widest font-light mt-2 capitalize xl:w-4/6 md:w-3/4">A true global freelance marketplace for game</h5>
+								<!--------------------->
+								<div class=" mt-7">
+									<a class="px-5 py-3 bg-yellow-500 text-white rounded-full shadow-2xl whitespace-nowrap font-medium text-sm" href="#">
+										<span class=" inline-block m-auto">Try Search</span>
+										<img class=" inline-block ml-2 h-6 w-6 m-auto" src="images/play.svg" alt="">
+									</a>
+								</div>
+							</div>
+						</div>
+						<!-------002--------->
+						<div class="md:absolute flex justify-center -top-9 w-full md:w-1/2 -right-10">
+							<img class="mx-auto 2xl:mb-auto xl:-mb-24 lg:-mb-16" src="images/01.png" alt="01.png">
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- == client Section == -->
+			<section>
+				<!------hero text-------->
+				<div class=" text-center ">
+					<h1 class=" text-3xl text-blue-900 font-bold">Explore Game For Marketplace</h1>
+				</div>
+				<!------carousel-------->
+				<div class="xl:px-32 md:px-16 sm:px-8 px-4 py-10">
+					<div class="grid grid-cols-7 gap-6 py-4">
+						<!------001-------->
+						<div class=" flex items-end">
+							<img src="images/image 72.png" alt="">
+						</div>
+						<!------002-------->
+						<div class=" flex items-end">
+							<img src="images/image 70.png" alt="">
+						</div>
+						<!------003-------->
+						<div class=" flex items-end">
+							<img src="images/image 69.png" alt="">
+						</div>
+						<!------004-------->
+						<div class=" flex items-end">
+							<img src="images/image 71.png" alt="">
+						</div>
+						<!------001-------->
+						<div class=" flex items-end">
+							<img src="images/image 72.png" alt="">
+						</div>
+						<!------002-------->
+						<div class=" flex items-end">
+							<img src="images/image 70.png" alt="">
+						</div>
+						<!------003-------->
+						<div class=" flex items-end">
+							<img src="images/image 69.png" alt="">
+						</div>
+					</div>
+					<div style="height:1px" class="w-96 mx-auto bg-gray-200 mt-10"></div>
+				</div>
+			</section>
+			<!-- == about us Section == -->
+			<section>
+				<!------hero text-------->
+				<div class=" text-center text-center px-4 py-10">
+					<h1 class=" text-3xl text-blue-900 font-bold">Explore 3rd Marketplace</h1>
+					<p class=" text-xs py-4 text-gray-500 md:w-1/3 mx-auto">Ex mollit nulla eiusmod id dolor. Cupidatat irure ad adipisicing mollit consequat. Fugiat mollit id excepteur commodo veniam quis do eu laboris. </p>
+				</div>
+				<!------grid-------->
+				<div class="grid md:grid-cols-4 grid-cols-2  xl:px-32 md:px-16 sm:px-8 px-4">
+					<!-------001------->
+					<div class=" text-center md:p-10 p-4">
+						<img class=" h-8 w-8 mx-auto" src="images/Group 235.svg" alt="">
+						<h3 class="font-medium pb-1 pt-4">Coaching</h3>
+						<p class=" text-xs text-gray-500">next level by learning from the professionals</p>
+					</div>
+					<!-------002------->
+					<div class=" text-center md:p-10 p-4">
+						<img class=" h-8 w-8 mx-auto" src="images/Group 236.png" alt="">
+						<h3 class="font-medium pb-1 pt-4">Leveling</h3>
+						<p class=" text-xs text-gray-500"> Find your match here to speed up the process!</p>
+					</div>
+					<!-------003------->
+					<div class=" text-center md:p-10 p-4">
+						<img class=" h-8 w-8 mx-auto" src="images/Group 233.png" alt="">
+						<h3 class="font-medium pb-1 pt-4">Pro Game Play</h3>
+						<p class=" text-xs text-gray-500">no more worrying about finding that last player.</p>
+					</div>
+					<!-------003------->
+					<div class=" text-center md:p-10 p-4">
+						<img class=" h-8 w-8 mx-auto" src="images/Group 234.png" alt="">
+						<h3 class="font-medium pb-1 pt-4">Entertaiment</h3>
+						<p class=" text-xs text-gray-500">find players who can make you laugh</p>
+					</div>
+				</div>
+			</section>
+			<!-- == service Section == -->
+			<section>
+				<div class="grid md:grid-cols-2 xl:px-32 md:px-16 sm:px-8 py-16 bg-cover gap-10 relative my-32 mb-10" style="background-image:url(images/bg-3.png)">
+					<!-------001---------->
+					<div class=" order-2 md:order-1">
+						<img class="md:absolute xl:-top-20 md:-top-16 left-0 -mb-32 2xl:w-1/3 lg:w-1/2 md:w-3/5"  src="images/04.png" alt="">
+					</div>
+					<!-------002---------->
+					<div class=" md:order-2 order-1">
+						<!-------Hero text----------->
+						<div class=" flex items-center ">
+							<div class=" h-20 w-3 bg-white"></div>
+							<div class=" ml-4">
+								<h1 class=" text-3xl font-bold text-white">On Demand Service</h1>
+								<p class="md:w-3/5 py-2 text-xs text-gray-400">Ex mollit nulla eiusmod id dolor. Cupidatat irure ad adipisicing mollit consequat. Fugiat mollit id excepteur commodo veniam quis do eu laboris. </p>
+							</div>
+						</div>
+						<div class=" grid md:grid-cols-2 gap-8 mt-10 px-4">
+							<!-------001---------->
+							<div class="flex items-start">
+								<img class="mr-3 h-6 w-5" src="images/play1.svg" alt="">
+								<div >
+									<h3 class=" text-white font-bold">Live chat</h3>
+									<p class="mt-1 text-xs text-gray-400">We offer live chat system to allow easy communication between buyer and seller. We will notify you that someone is waiting your reply.</p>
+								</div>
+							</div>
+							<!-------002---------->
+							<div class="flex items-start">
+								<img class="mr-3 h-6 w-5" src="images/play1.svg" alt="">
+								<div >
+									<h3 class="whitespace-nowrap text-white font-bold">Modification & Cancellation</h3>
+									<p class="mt-1 text-xs text-gray-400">For whatever reason that you cannot make it to the booking, you can modify or cancel the booking and receive full refund</p>
+								</div>
+							</div>
+							<!-------003---------->
+							<div class="flex items-start">
+								<img class="mr-3 h-6 w-5" src="images/play1.svg" alt="">
+								<div >
+									<h3 class="whitespace-nowrap text-white font-bold">On Demand Booking</h3>
+									<p class="mt-1 text-xs text-gray-400">You can place a booking while you are chatting with a seller. Seamless with the chatbox allows  to get your booking done!</p>
+								</div>
+							</div>
+							<!-------004---------->
+							<div class="flex items-start">
+								<img class="mr-3 h-6 w-5" src="images/play1.svg" alt="">
+								<div >
+									<h3 class="whitespace-nowrap text-white font-bold">Customer support</h3>
+									<p class="mt-1 text-xs text-gray-400">In case you are not able to solve an issue, we also provide both e-mail and live chat service for members of 3rd Marketplace.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- == global Section == -->
+			<section>
+				<!------hero text-------->
+				<div class=" text-center text-center px-4 py-16">
+					<h1 class=" text-3xl text-blue-900 font-bold">Global Match Making</h1>
+					<p class=" text-xs py-4 text-gray-500 md:w-2/5 mx-auto tracking-wide leading-snug">Reach millions of potential listeners by listing your podcast in Apple Podcasts, Spotify, Google Podcasts, Stitcher, iHeart Radio, TuneIn, Alexa, Overcast, PocketCasts, Castro, Castbox, and Podchaser.</p>
+				</div>
+				<!------grid-------->
+				<div class="grid grid-cols-1 xl:px-32 md:px-16 sm:px-8 px-4">
+					<div>
+						<img class=" object-fill lg:px-20 mx-auto" src="images/Group 259.png" alt="">
+					</div>
+				</div>
+			</section>
+			<!-- == comunity Section == -->
+			<section>
+				<div class="pt-6 xl:px-32 md:px-16 sm:px-8 px-4">
+					<div class="lg:grid relative lg:grid-cols-2 bg-cover bg-no-repeat  md:rounded-3xl h-4/5 px-2 lg:p-16 pb-0 mt-32 shadow-xl" style="background-image:url(images/bg-02.png)">
+						<!------------------->
+						<div class="lg:text-left  text-center pb-0 py-10">
+							<h3 class=" text-xl font-semibold tracking-tight">Are You Ready?</h3>
+							<h1 class=" md:text-4xl text-3xl my-2 font-bold tracking-tight">Join 3MP Community Now!</h1>
+							<div class="mt-7">
+								<a class="rounded-2xl shadow-2xl border-yellow-500 border-2 px-10 text-white text-xl font-semibold bg-yellow-500 p-2 hover:text-yellow-500 hover:bg-white duration-300" href="#">Buy</a>
+								<a class="rounded-2xl shadow-2xl ml-4 border-2 px-10 text-yellow-500 text-xl font-semibold border-yellow-500 p-2 hover:text-white hover:bg-yellow-500 duration-300" href="#">Sell</a>
+							</div>
+						</div>
+						<!------------------->
+						<div class=" lg:absolute lg:h-screen 2xl:-top-20 2xl:right-28 lg:right-20 right-0 lg:-top-20 overflow-hidden">
+							<img class="h-3/5 mx-auto hidden lg:block" src="images/03.png" alt="03.png">
+							<img class="w-full mx-auto lg:hidden block" src="images/06.png" alt="03.png">
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<!-- ==Footer Section == -->
+		<footer class="xl:px-32 md:px-16 sm:px-8 px-4 py-10 pb-0">
+			<!------------------------------------------------>
+			<div class="grid lg:grid-cols-5 md:grid-cols-2 grid-cols-1 gap-5 border-gray-200 border-t border-b md:px-16 px-4 md:py-16 py-10">
+				<!-- ==001 == -->
+				<div class=" flex md:col-span-2 col-span-1">
+					<div>
+						<div>
+							<a href="index.html">
+								<img class=" w-48" src="images/logo.png" alt="logo">
+							</a>
+							<p class=" text-sm text-gray-500 ml-1 my-5">A True Global Freelance Marketplace for Gamers</p>
+						</div>
+						<div class=" flex space-x-8 items-center">
+							<a href="#">
+								<img class="h-5 w-5" src="images/Facebook.svg" alt="Facebook.svg">
+							</a>
+							<a href="#">
+								<img class="h-5 w-5" src="images/twitter-2.svg" alt="twitter-2.svg">
+							</a>
+							<a href="#">
+								<img class="h-5 w-6" src="images/youtube-2.png" alt="youtube-2.png">
+							</a>
+						</div>
+					</div>
+				</div>
+				<!-- ==002 == -->
+				<div class=" flex lg:justify-center col-span-1">
+					<ul>
+						<div>
+							<h4 class="mb-6 text-xl font-bold">Main</h4>
+						</div>
+						<li class=" mb-3">
+							<a class="text-gray-500 text-sm" href="#">Home</a>
+						</li>
+						<li class=" mb-3">
+							<a class="text-gray-500 text-sm" href="#">About Us</a>
+						</li>
+						<li class=" mb-3">
+							<a class="text-gray-500 text-sm" href="#">Marketplace</a>
+						</li>
+						<li class=" mb-3">
+							<a class="text-gray-500 text-sm" href="#">News</a>
+						</li>
+					</ul>
+				</div>
+				<!-- ==003 == -->
+				<div class=" flex lg:justify-center col-span-1">
+					<ul>
+						<div>
+							<h4 class="mb-6 text-xl font-bold">Support</h4>
+						</div>
+						<li class=" mb-3">
+							<a class="text-gray-500 text-sm" href="#">Trust & Responsibility</a>
+						</li>
+						<li class=" mb-3">
+							<a class="text-gray-500 text-sm" href="#">Customer Support</a>
+						</li>
+						<li class=" mb-3">
+							<a class="text-gray-500 text-sm" href="#">Buyer Guide</a>
+						</li>
+						<li class=" mb-3">
+							<a class="text-gray-500 text-sm" href="#">Seller Guide</a>
+						</li>
+					</ul>
+				</div>
+				<!-- ==004 == -->
+				<div class=" flex lg:justify-center col-span-1">
+					<ul>
+						<div>
+							<h4 class="mb-6 text-xl font-bold">Legal</h4>
+						</div>
+						<li class=" mb-3">
+							<a class="text-gray-500 text-sm" href="#">Privacy Policy</a>
+						</li>
+						<li class=" mb-3">
+							<a class="text-gray-500 text-sm" href="#">User Agreement</a>
+						</li>
+						<li class=" mb-3">
+							<a class="text-gray-500 text-sm" href="#">Cookie Policy</a>
+						</li>
+						<li class=" mb-3">
+							<a class="text-gray-500 text-sm" href="#">Refund Policy</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!------------------------------------------------>
+			<div class="md:grid  lg:grid-cols-2 py-4 px-10">
+				<div class="flex items-center justify-between">
+					<div x-data="{language:false}" class="hidden md:block relative">
+						<button @click="language=!language" class="flex items-center space-x-2 text-gray-500 text-sm focus:outline-none">
+							<img class=" h-4 w-4" src="images/united-kingdom 1.png" alt="">
+							<span>English</span>
+							<span>
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+								<path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+								</svg>
+							</span>
+						</button>
+						<div x-show="language" @click.away="language=false" class="absolute">
+							<button @click="language=false" class=" flex items-center space-x-2 text-gray-500 text-sm focus:outline-none">
+								<img class=" h-4 w-4" src="images/united-kingdom1.png" alt="">
+								<span>English</span>
+							</button>
+							<button @click="language=false" class=" flex items-center space-x-2 text-gray-500 text-sm focus:outline-none">
+								<img class=" h-4 w-4" src="images/spanish.png" alt="">
+								<span>Spanish</span>
+							</button>
+						</div>
+					</div>
+				</div>
+				<!----------->
+				<div class=" flex items-center md:justify-end justify-center">
+					<p class="text-gray-500 text-sm">2021 © The Third Market Place</p>
+				</div>
+			</div>
+		</footer>
+		<!--  alpine js -->
+		<script src="js/alpine.min.js"></script>
+	</body>
+	
+</html>
+
+
+
+
+
+
+
