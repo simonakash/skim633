@@ -34,11 +34,43 @@
 			ul li:hover::after,ul li:focus::after,ul li a:active::after,.active::after{
 				width: 100% !important;
 			}
+			.owl-carousel .owl-stage {
+			display: flex;
+			align-items: center;
+			}
+			#ser-img-2{
+					width: 1319.01px;
+    				height: 492.01px !important;
+				}
 			@media(min-width:1550px){
 				.w-1550{
 					width: 1550px;
 					margin: auto;
 				}
+				#ser-img-1{
+					height: 799px;
+					width: 711px;
+				}
+				#ser-img{
+					width: 840.46px;
+    				height: 685px !important;
+				}
+				
+			}
+			@media(min-width:668px){
+				.bg-none {
+					background-image: none !important;
+				}
+			}
+			@media(max-width:1549px){
+				#ser-img-1{
+					height: 740px;
+				}
+				#ser-img{
+					width: 742.46px;
+    				height: 690px !important;
+				}
+				
 			}
 			@media(max-width:668px){
 				#global{
@@ -46,9 +78,22 @@
 					transform: translatex(-333px);
 				}
 				#ser-img{
-					min-width: 481px;
-    				height: auto !important;
+					min-width: 480.31px;
+					height: 580.65px !important;
 				}
+				#ser-img-1{
+					min-width: 540px;
+					max-height: 512px;
+
+				}
+				.text-4xl{
+					font-size: 40px !important;
+				}
+				#ser-img-2{
+					width: 1042px;
+    				height: 388.68px !important;
+				}
+				
 			}
 		</style>
 	</head>
@@ -113,7 +158,7 @@
 						</a>
 					</div>
 					<!------- Main menu-------->
-					<div class="lg:flex space-x-6 text-sm font-medium hidden">
+					<div class="lg:flex space-x-6 font-medium hidden">
 						<ul x-data=" {active :'active1'}" class="space-x-6 md:flex hidden tracking-wider scroll relative">
 							<!--------------------->
 							<li  @click=" active='active1'" :class="{'active': active==='active1'}" class="text-blue-900">
@@ -150,24 +195,24 @@
 			<!-- == Slider Section == -->
 			<section class="w-1550">
 				<div class="py-10 pb-28 xl:px-32 md:px-16 sm:px-8 px-4">
-					<div class="relative md:grid md:grid-cols-2 bg-cover bg-no-repeat bg-center rounded-3xl py-20 sm:py-28 lg:py-20" style="background-image:url(images/bg-01.png)">
+					<div class="relative lg:grid lg:grid-cols-2 bg-cover bg-no-repeat bg-center rounded-3xl py-20 sm:py-28 lg:py-20" style="background-image:url(images/bg-01.png)">
 						<!-------001--------->
-						<div class=" flex self-center md:justify-end justify-center lg:py-10 py-5">
-							<div class="md:text-left text-center xl:w-3/4 w-4/5 py-10">
-								<h3 class="lg:text-5xl text-4xl font-bold pb-3 text-white xl:w-3/4">The Market Is Now Open!</h3>
-								<h5 class="text-white opacity-80 block text-sm tracking-widest font-light mt-2 capitalize xl:w-4/6 md:w-3/4">A true global freelance marketplace for game</h5>
+						<div class=" flex self-center lg:justify-end justify-center lg:py-10 py-5">
+							<div class="lg:text-left text-center xl:w-3/4 lg:w-4/5 py-10">
+								<h3 class="2xl:text-7xl sm:text-6xl text-4xl font-extrabold pb-3 text-white 2xl:leading-tight">The Market Is Now Open!</h3>
+								<h5 class="text-white opacity-80 block lg:text-2xl lg:tracking-widest mt-2">A true global freelance marketplace for game</h5>
 								<!--------------------->
-								<div class=" mt-7">
-									<a class="px-5 py-3 bg-yellow-500 text-white rounded-full shadow-2xl whitespace-nowrap font-medium text-sm" href="#">
+								<div class=" mt-10">
+									<a class="sm:px-12 px-9 sm:py-5 py-3 bg-yellow-500 text-white rounded-full shadow-2xl whitespace-nowrap font-bold text-2xl" href="#">
 										<span class=" inline-block m-auto">Try Search</span>
-										<img class=" inline-block ml-2 h-6 w-6 m-auto" src="images/play.svg" alt="">
+										<img class=" inline-block ml-2 h-8 w-8 m-auto" src="images/play.svg" alt="">
 									</a>
 								</div>
 							</div>
 						</div>
 						<!-------002--------->
-						<div class="md:absolute flex justify-center -mb-40 -top-9 w-full md:w-1/2 -right-10">
-							<img class="mx-auto 2xl:mb-auto xl:-mb-24 lg:-mb-16" src="images/01.png" alt="01.png" style="min-height: 650px;min-width: 580px;">
+						<div class="lg:absolute flex justify-center -mb-40 -top-12 w-full lg:w-1/2 -right-10">
+							<img id="ser-img-1" class="mx-auto 2xl:mb-auto xl:-mb-24 lg:-mb-16" src="images/01.png" alt="01.png">
 						</div>
 					</div>
 				</div>
@@ -262,18 +307,18 @@
 			</section>
 			<!-- == service Section == -->
 			<section>
-				<div class="grid md:grid-cols-2 xl:px-32 md:px-16 sm:px-8 px-0 py-16 bg-cover gap-10 relative my-32 mb-10 2xl:px-96" style="background-image:url(images/bg-3.png)">
+				<div class="grid lg:grid-cols-2 xl:px-32 md:px-16 sm:px-8 px-0 py-20 bg-cover gap-10 relative my-32 mb-10 2xl:px-96" style="background-image:url(images/bg-3.png)">
 					<!-------001---------->
-					<div class=" order-2 md:order-1 ">
-						<img id="ser-img" class="md:absolute left-0 md:mb-0 -mb-32 -top-24" style="height: 680px;"  src="images/04.png" alt="">
+					<div class=" order-2 lg:order-1 ">
+						<img id="ser-img" class="lg:absolute  mx-auto left-0 md:mb-0 -mb-36 -top-24" style="height: 680px;"  src="images/04.png" alt="">
 					</div>
 					<!-------002---------->
-					<div class=" md:order-2 order-1 md:pr-0 pr-32">
+					<div class=" lg:order-2 order-1 md:pr-0 pr-32">
 						<!-------Hero text----------->
-						<div class=" flex items-center ">
-							<div class=" h-20 w-3 bg-white"></div>
+						<div class=" flex items-start ">
+							<div class=" md:h-20 h-40 w-4 bg-white"></div>
 							<div class=" ml-4">
-								<h1 class=" text-3xl font-bold text-white">On Demand Service</h1>
+								<h1 class=" text-5xl font-bold text-white">On Demand Service</h1>
 								<p class="md:w-3/5 py-2 text-xs text-gray-400">Ex mollit nulla eiusmod id dolor. Cupidatat irure ad adipisicing mollit consequat. Fugiat mollit id excepteur commodo veniam quis do eu laboris. </p>
 							</div>
 						</div>
@@ -324,18 +369,18 @@
 				<!------grid-------->
 				<div class="grid grid-cols-1 xl:px-32 md:px-16 sm:px-8 px-4">
 					<div id="global">
-						<img class=" object-fill lg:px-20 mx-auto" src="images/Group 259.png" alt="">
+						<img id="ser-img-2" class="mx-auto" src="images/Group 259.png" alt="">
 					</div>
 				</div>
 			</section>
 			<!-- == comunity Section == -->
 			<section class="w-1550">
-				<div class="pt-6 xl:px-32 md:px-16 sm:px-8">
-					<div class="lg:grid relative lg:grid-cols-2 bg-cover bg-no-repeat bg-center md:rounded-3xl lg:p-20 pb-0 mt-32 shadow-xl" style="background-image:url(images/bg-02.png)">
+				<div class="xl:px-32 md:px-16 sm:px-8">
+					<div class="lg:grid relative lg:grid-cols-2 bg-cover bg-no-repeat bg-center md:rounded-3xl lg:p-20 pb-0 mt-20 shadow-2xl" style="background-image:url(images/bg-02.png)">
 						<!------------------->
-						<div class="lg:text-left  text-center ">
-							<h3 class=" text-xl font-semibold tracking-tight">Are You Ready?</h3>
-							<h1 class=" md:text-4xl text-3xl my-2 font-bold tracking-tight lg:whitespace-nowrap">Join 3MP Community Now!</h1>
+						<div class="bg-none bg-no-repeat lg:text-left text-center p-4" style="background-image: url(images/Ellipse55.png);">
+							<h3 class=" text-2xl font-semibold tracking-tight">Are You Ready?</h3>
+							<h1 class=" md:text-4xl md:text-3xl text-4xl my-2 font-bold tracking-tight md:text-black text-purple-900 lg:whitespace-nowrap">Join 3MP Community Now!</h1>
 							<div class="mt-7">
 								<a class="rounded-2xl shadow-2xl border-yellow-500 border-2 px-10 text-white text-xl font-semibold bg-yellow-500 p-2 hover:text-yellow-500 hover:bg-white duration-300" href="#">Buy</a>
 								<a class="rounded-2xl shadow-2xl ml-4 border-2 px-10 text-yellow-500 text-xl font-semibold border-yellow-500 p-2 hover:text-white hover:bg-yellow-500 duration-300" href="#">Sell</a>
