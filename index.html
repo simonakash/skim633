@@ -49,11 +49,12 @@
 				}
 				#ser-img-1{
 					height: 799px;
-					width: 711px;
+    				min-width: 799px;
 				}
 				#ser-img{
-					width: 840.46px;
-    				height: 685px !important;
+					min-width:799px;
+					left: -382px;
+					top: -306px;
 				}
 				
 			}
@@ -65,10 +66,13 @@
 			@media(max-width:1549px){
 				#ser-img-1{
 					height: 740px;
+    				min-width: 740px;
 				}
 				#ser-img{
-					width: 742.46px;
-    				height: 690px !important;
+					min-width: 638px;
+					left: -126px;
+					top: -213px;
+
 				}
 				
 			}
@@ -307,10 +311,10 @@
 			</section>
 			<!-- == service Section == -->
 			<section>
-				<div class="grid lg:grid-cols-2 xl:px-32 md:px-16 sm:px-8 px-0 py-20 bg-cover gap-10 relative my-32 mb-10 2xl:px-96" style="background-image:url(images/bg-3.png)">
+				<div class="grid lg:grid-cols-2 xl:px-32 md:px-16 sm:px-8 px-0 2xl:py-40 py-20 bg-cover gap-10 relative my-32 mb-10 2xl:px-96" style="background-image:url(images/bg-3.png)">
 					<!-------001---------->
-					<div class=" order-2 lg:order-1 ">
-						<img id="ser-img" class="lg:absolute  mx-auto left-0 md:mb-0 -mb-36 -top-24" style="height: 680px;"  src="images/04.png" alt="">
+					<div class=" order-2 lg:order-1 relative">
+						<img id="ser-img" class="lg:absolute  mx-auto left-0 md:mb-0 -mb-36 -top-24" src="images/04.png" alt="">
 					</div>
 					<!-------002---------->
 					<div class=" lg:order-2 order-1 md:pr-0 pr-32">
@@ -318,7 +322,7 @@
 						<div class=" flex items-start ">
 							<div class=" md:h-20 h-40 w-4 bg-white"></div>
 							<div class=" ml-4">
-								<h1 class=" text-5xl font-bold text-white">On Demand Service</h1>
+								<h1 class="lg:whitespace-nowrap text-5xl font-bold text-white">On Demand Service</h1>
 								<p class="md:w-3/5 py-2 text-xs text-gray-400">Ex mollit nulla eiusmod id dolor. Cupidatat irure ad adipisicing mollit consequat. Fugiat mollit id excepteur commodo veniam quis do eu laboris. </p>
 							</div>
 						</div>
